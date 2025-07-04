@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Food & Fitness Planner</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Welcome to Food & Fitness Planner</h2>
+    <nav>
+        <div th:if="${#authorization.expression('isAuthenticated()')}">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/foods">My Foods</a>
+            <a href="/workouts">My Workouts</a>
+            <a href="/profile">Profile</a>
+            <form th:action="@{/logout}" method="post" style="display:inline;">
+                <input type="submit" value="Logout"/>
+            </form>
+        </div>
+        <div th:unless="${#authorization.expression('isAuthenticated()')}">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

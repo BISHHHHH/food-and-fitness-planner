@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Profile</h2>
+    <form th:action="@{/profile}" method="post">
+        <input type="number" name="age" placeholder="Age" th:value="${user.age}" required/>
+        <input type="number" name="weight" placeholder="Weight (kg)" th:value="${user.weight}" required/>
+        <select name="gender" required>
+            <option th:selected="${user.gender == 'Male'}">Male</option>
+            <option th:selected="${user.gender == 'Female'}">Female</option>
+            <option th:selected="${user.gender == 'Other'}">Other</option>
+        </select>
+        <select name="activityLevel" required>
+            <option th:selected="${user.activityLevel == 'Low'}">Low</option>
+            <option th:selected="${user.activityLevel == 'Moderate'}">Moderate</option>
+            <option th:selected="${user.activityLevel == 'High'}">High</option>
+        </select>
+        <button type="submit">Update Profile</button>
+    </form>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/home">Home</a>
+    </nav>
+</div>
+</body>
+</html>

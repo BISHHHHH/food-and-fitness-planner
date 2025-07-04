@@ -1,0 +1,115 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6f8;
+}
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    padding: 32px 40px 40px 40px;
+}
+h2 {
+    color: #2d6a4f;
+    text-align: center;
+    margin-bottom: 28px;
+}
+form {
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+}
+form input, form select {
+    padding: 8px 12px;
+    border: 1px solid #b7b7b7;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 180px;
+}
+form button, input[type="submit"] {
+    background: #40916c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover, input[type="submit"]:hover {
+    background: #1b4332;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    background: #fff;
+}
+th, td {
+    border: 1px solid #b7b7b7;
+    padding: 10px 12px;
+    text-align: left;
+}
+th {
+    background: #95d5b2;
+    color: #222;
+}
+tr:nth-child(even) {
+    background: #f1f8f4;
+}
+a {
+    color: #40916c;
+    text-decoration: none;
+    margin-right: 16px;
+    font-weight: 500;
+}
+a:hover {
+    text-decoration: underline;
+}
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+@media (max-width: 800px) {
+    .container {
+        padding: 16px 8px 24px 8px;
+    }
+    form input, form button, form select {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+.dashboard-grid {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+.dashboard-card {
+    flex: 1 1 250px;
+    background: #f1f8f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.07);
+    margin-bottom: 16px;
+}
+.dashboard-tables {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.dashboard-tables > div {
+    flex: 1 1 300px;
+}
+@media (max-width: 900px) {
+    .dashboard-grid, .dashboard-tables {
+        flex-direction: column;
+        gap: 0;
+    }
+}
